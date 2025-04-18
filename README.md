@@ -1,26 +1,29 @@
-# 📘 Génération du README.md et requirements.txt pour le projet
-
-readme_content = """# 💓 Prédiction de Maladie Cardiaque
+# Prédiction de Maladie Cardiaque
 
 Ce projet utilise un modèle de Machine Learning pour prédire si un patient présente un **risque de maladie cardiaque**, à partir de caractéristiques cliniques simples. L'application est déployée via **Streamlit**.
 
 ---
 
-## 📁 Structure du projet
+## Structure du projet
 
 ```
-├── app.py                       # Code de l'application
-├── models/
-│   └── best_model.pkl           # Modèle entraîné et sauvegardé avec joblib
-├── data/
-│   └── heart_disease_clean.csv     # Données nettoyées
-│   └── HeartDiseaseUCI.csv          #Données d'origine
-├── notebooks/
-│   ├── data_exploration.ipynb
-│   └── model_training.ipynb
-├── README.md
-└── requirements.txt
-└── .gitignoore
+│
+├── app.py                          # Application Streamlit (interface utilisateur)
+│
+├── models/                       # Modèle entraîné sauvegardé
+│   └── best_model.pkl
+│
+├── data/                         # Données brutes et nettoyées
+│   ├── HeartDiseaseUCI.csv              # Données originales
+│   └── heart_disease_clean.csv          # Données nettoyées prêtes à l'entraînement
+│
+├── notebooks/                    # Analyse exploratoire et modélisation
+│   ├── data_exploration.ipynb           # EDA, visualisations, preprocessing
+│   └── model_training.ipynb             # Entraînement et évaluation des modèles
+│
+├── .gitignore                    # Fichiers/dossiers à ignorer par Git
+├── requirements.txt              # Dépendances du projet
+└── README.md                     # Documentation du projet
 
 ```
 
@@ -40,12 +43,12 @@ pip install -r requirements.txt
 streamlit run app/streamlit_app.py
 ```
 
-L'interface s'ouvre automatiquement dans le navigateur 🌐
+L'interface s'ouvre automatiquement dans le navigateur 
 
 ---
 ## Aperçu de l'application
+![Aperçu de l'interface Streamlit](image.png)
 
-![Interface Streamlit](![alt text](image-1.png))
 
 ##  Fonctionnalités
 
@@ -72,31 +75,14 @@ Le modèle utilisé est un classificateur de Machine Learning entraîné à part
 
 ---
 
-##  Remerciements
-
-Projet développé dans un contexte de santé numérique et apprentissage automatique, à des fins pédagogiques et de sensibilisation.
-
----
-
-##  Contact
+##  Auteur
 
 - **Nom** : Owen Mouketou  
 - **Email** : [mouketoudielowen@gmail.com](mailto:mouketoudielowen@gmail.com)  
 - **LinkedIn** : [linkedin.com/in/owen-mouketou](https://linkedin.com/in/owen-mouketou)
-"""
 
-requirements_txt = """streamlit
-pandas
-numpy
-matplotlib
-scikit-learn
-joblib
-"""
+## Disclaimer
 
-with open("README.md", "w", encoding="utf-8") as f:
-    f.write(readme_content)
-
-with open("requirements.txt", "w") as f:
-    f.write(requirements_txt)
-
-print("README.md et requirements.txt générés avec succès.")
+> Ce projet a été conçu dans un but **démonstratif et d'apprentissage**.  
+> Il ne constitue en aucun cas un dispositif médical certifié ni un outil de diagnostic fiable pour un usage clinique.  
+> Les résultats produits par l’application sont basés sur des modèles statistiques entraînés sur un jeu de données public, et **ne doivent jamais se substituer à l’avis d’un professionnel de santé qualifié**.
