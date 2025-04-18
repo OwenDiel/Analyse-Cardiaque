@@ -40,7 +40,7 @@ pip install -r requirements.txt
 ### 2. Lancer l'application Streamlit
 
 ```bash
-streamlit run app/streamlit_app.py
+streamlit run app.py
 ```
 
 L'interface s'ouvre automatiquement dans le navigateur 
